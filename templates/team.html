@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <meta charset="UTF-8" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjx.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Trotro Live</title>
+    <style>
+      .picture {
+        width: 180px;
+        height: 180px;
+        border-radius: 90%;
+      }
+      .description {
+        margin: auto;
+      }
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <header>
+      <br />
+      <div class="toptitle">
+        <ul>
+          <li>
+            <img
+              class="banner2"
+              src="{{ url_for('static', filename='images/logomod.png') }}"
+            />
+          </li>
+
+          <li>
+            <h4
+              class="maintext"
+              style="
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 30px;
+                padding-top: 27px;
+              "
+            >
+              TROTRO LIVE
+            </h4>
+          </li>
+        </ul>
+      </div>
+      <h5><marquee>The future is great with science and data </marquee></h5>
+
+      <div class="menubar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>
+            <a href="#">About Us</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="/company">Company Info</a></li>
+                <li><a href="/team">Meet The Team</a></li>
+                <li><a href="#">Contact Info</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">Trotro Dairies </a>
+            <div class="submenu">
+              <ul>
+                <li><a href="/member">Member Page</a></li>
+                <li><a href="#">General Travel</a></li>
+                <li><a href="#">Health Concerns</a></li>
+                <li><a href="#">Safety Measures</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <br />
+      <!-- My Code -->
+      <div class="father-div">
+        <div class="box">
+          <span style="--i: 1"><img src="../static/image/1.png" alt="" /></span>
+          <span style="--i: 2"><img src="../static/image/2.png" alt="" /></span>
+          <span style="--i: 3"><img src="../static/image/3.png" alt="" /></span>
+          <span style="--i: 4"><img src="../static/image/4.png" alt="" /></span>
+          <span style="--i: 5"><img src="../static/image/5.png" alt="" /></span>
+          <span style="--i: 6"><img src="../static/image/6.png" alt="" /></span>
+          <span style="--i: 7"><img src="../static/image/7.png" alt="" /></span>
+          <span style="--i: 8"><img src="../static/image/8.png" alt="" /></span>
+          <span style="--i: 9"><img src="../static/image/9.png" alt="" /></span>
+          <span style="--i: 10"
+            ><img src="../static/image/10.png" alt=""
+          /></span>
+          <span style="--i: 11"
+            ><img src="../static/image/11.png" alt=""
+          /></span>
+          <span style="--i: 11"
+            ><img src="../static/image/12.jpg" alt=""
+          /></span>
+        </div>
+      </div>
+      <!-- End of my code -->
+
+      <div class="mainbanner">
+        <img
+          src="{{ url_for('static', filename='images/logo.jpg') }}"
+          class="banner"
+        />
+      </div>
+    </header>
+
+    <div class="abouttext">
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/worae.jpg') }}"
+      />
+      <h2>Akwasi Adjei Worae</h2>
+      <h4>ENTREPRENEUR</h4>
+      <p class="description">
+        I joined this firm because I believe in technological transformation and
+        thus with this web/app, later in the years our country will be a better
+        place because this application will be everyone's friend.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/bilson.jpg') }}"
+      />
+      <h2>Bilson Donkor</h2>
+      <h4>ENTREPRENEUR AND SALES CONSULTANT</h4>
+      <p class="description">
+        TrotroLive is the future of Ghana's logistics system because of it's
+        convenience and simplicity
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/godfred.jpg') }}"
+      />
+      <h2>Godfred Addai Amoako</h2>
+      <h4>DATA SCIENTIST</h4>
+      <p class="description">
+        My daily routine cannot exclude my trotro trips; sometimes the minivans
+        conductors and passengers do not get along because of cheating so we
+        collected big data and transforming the original trotro digitally and
+        physically.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='image/12.jpg') }}"
+        alt=""
+      />
+      <h2>Tejas Naik</h2>
+
+      <h4>PYTHON/BACKEND DEVELOPER</h4>
+      <p class="description">
+        I am Tejas, I am 15 and from India. I am really passionated about
+        programming and that's what got me to this project this is my first
+        project, will try my best for this app.
+      </p>
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/woode.jpg') }}"
+      />
+      <h2>Emmanuel Woode</h2>
+      <h4>MECHANICAL ENGINEERING STUDENT; KNUST</h4>
+      <p class="description">
+        The reason why I participated in the creation of this app was to help
+        gather information about public transits and it's required fares. I am
+        absolutely sure that this app will help stranded visitors to locate
+        transit stations and know their transportation fees.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/adamu.jpg') }}"
+      />
+      <h2>Ibrahim Adamu</h2>
+      <h4>MODEL AND NURSE</h4>
+      <p class="description">
+        I have no skills in technology but I am a pivot to all the systems. I
+        had to go to the trotro stations themselves and get the raw data. I am
+        not yet done, I know there is a long way to the future of Trotro.Live.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/gideon.jpg') }}"
+      />
+      <h2>Gideon Botwe</h2>
+      <h4>GRAPHIC DESIGNER</h4>
+      <p class="description">
+        Charlie, every penny counts. I do not want any wahala with any trotro
+        mate if there is an increment in fare prices or I travel to a place
+        where I do not know the fare. Brainstorming with the team,I created this
+        marvellous logo.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/ekow.jpg') }}"
+      />
+      <h2>Andy Ekow Mensah</h2>
+      <h4>PYTHON DEVELOPER</h4>
+      <p class="description">
+        I just see every world problem as a programming challenge, which I would
+        like to help solve. Finding the right trotro fare is one of these
+        problems and can be solved by writing just the right code.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/kwame.jpg') }}"
+      />
+      <h2>Kwame Rationale</h2>
+      <h4>VOLUNTEER</h4>
+      <p class="description">
+        Everyone uses trotro, and as a regular user my ideas matters to the
+        team.
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/adonis.jpg') }}"
+      />
+      <h2>Adonis Simon</h2>
+      <h4>PROMOTER</h4>
+      <p class="description">
+        I believe this app is going to make an outstanding change for the local
+        transportation business and for the people at large. It is going to make
+        us well budgeted and I believe is the only locally made app created to
+        provide local transportation information
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/samantwi.jpg') }}"
+      />
+      <h2>Samuel Antwi Oteng</h2>
+      <h4>FASHION DESIGNER</h4>
+      <p class="description">
+        You do not need to climb a mountain to see the star
+      </p>
+      <hr />
+      <br />
+      <img
+        class="picture"
+        src="{{ url_for('static', filename='images/lizzie.jpg') }}"
+      />
+      <h2>Nartey Elizabeth-Lynda</h2>
+      <h4>FRONT-END DEVELOPER/STUDENT</h4>
+      <p class="description">
+        Being a part of this team has been an amazing opportunity to learn and
+        unearth basic user interface designs. Trotro.Live is a smart way of
+        pushing the country a pace further in Science and technology.
+      </p>
+      <br /><br />
+    </div>
+
+    <footer>
+      <p>
+        Copyright &copy; 2020 Trotro Live Ltd .
+        <a href="company">Company Information</a>
+      </p>
+      <p2><a href="privacy">Privacy Terms</a></p2>
+    </footer>
+  </body>
+</html>

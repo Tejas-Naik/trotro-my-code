@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+   <meta charset="UTF-8">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjx.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Trotro Live</title>
+</head>
+<body>
+   <header>
+      <br>
+     <div class="toptitle">
+        <ul>
+      <li>  <img class="banner2" src="{{ url_for('static', filename='images/logomod.png') }}"></li>
+   
+      <li><h4 class ="maintext" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 30px; padding-top: 27px">TROTRO LIVE</h4></li>
+   
+</ul>
+</div>
+<h5><marquee>The future is great with science and data </marquee></h5>
+      
+   <div class="menubar">
+      <ul>
+         <li class="active"><a href="/">Home</a></li>
+         <li><a href="#">About Us</a>
+         <div class="submenu">
+            <ul>
+               <li><a href="/company">Company Info</a></li>
+               <li><a href="/team">Meet The Team</a></li>
+               <li><a href="#">Contact Info</a></li>
+            </ul>
+         </div>
+      </li>
+      <li><a href="#">Trotro Dairies
+      </a>
+      <div class="submenu">
+         <ul>
+            <li><a href="/member">Member Page</a></li>
+            <li><a href="#">General Travel</a></li>
+            <li><a href="#">Health Concerns</a></li>
+            <li><a href="#">Safety Measures</a></li>
+            <li><a href="#">FAQs</a></li>
+         </ul>
+      </div>
+   </li>
+   </ul>
+</div>
+</header>
+<div></div>
+<div class="showcase">
+<br>
+   <h5 style="text-align: center;">Wondering the cost of transport from anywhere in the country?</h5>
+   <div class="mainbanner"> 
+      <img src="{{ url_for('static', filename='images/wondering.jpeg') }}" class="banner" style="width: 100%; height: 100%;">
+  </div>
+</div>
+<br>
+
+
+
+<div class="join">
+    Join Us today!!
+    <a href="signup" class="signup-btn"><span>Sign Up</span></a>
+
+<br>
+
+    Already a member?
+<a href="login" class="login-btn"><span>Log In</span></a>
+<br>
+</div>
+
+<div class="mainbanner"> 
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="banner">
+</div>
+
+
+
+<div class="form22">
+   <h5>Find the cost of your next journey now!!</h5>
+   <br>
+   <h3 style="color: red;">{{same}}</h3>
+
+   <div>  
+      {% for singlefar in singlefare %} 
+      <h3>Fare from {{ src }} to {{ dest }} is: </h3>         
+      <b><h2 style="color: green;">GH₵ {{ singlefar.fare }}0 p {{ singlefar.transit }}</h2></b>
+      {% endfor %}
+   </div>
+   <br>
+   </div>
+
+   <div class="center"></div>
+   <div class="form22">
+    <div><a href="/">WRONG PROVIDENCE?</a></div>
+    <br>
+    <form action="/search" method="POST">
+    
+    <div><label for='src'>From : </label></div>
+    <div><select id='src' name="src">
+  <option value="+2Pub" {% if src=="+2Pub" %} selected="selected" {% endif %}>+2Pub</option>
+  <option value="A Line" {% if src=="A Line" %} selected="selected" {% endif %}>A Line</option>
+  <option value="A line" {% if src=="A line" %} selected="selected" {% endif %}>A line</option>
+  <option value="Aboabo" {% if src=="Aboabo" %} selected="selected" {% endif %}>Aboabo</option>
+  <option value="Aboahu" {% if src=="Aboahu" %} selected="selected" {% endif %}>Aboahu</option>
+  <option value="Aboaso" {% if src=="Aboaso" %} selected="selected" {% endif %}>Aboaso</option>
+  <option value="Abobaso" {% if src=="Abobaso" %} selected="selected" {% endif %}>Abobaso</option>
+  <option value="Abono" {% if src=="Abono" %} selected="selected" {% endif %}>Abono</option>
+  <option value="Aboude TUC" {% if src=="Aboude TUC" %} selected="selected" {% endif %}>Aboude TUC</option>
+  <option value="Abrepo" {% if src=="Abrepo" %} selected="selected" {% endif %}>Abrepo</option>
+  <option value="Abrepo Junction" {% if src=="Abrepo Junction" %} selected="selected" {% endif %}>Abrepo Junction</option>
+  <option value="Abuakwa" {% if src=="Abuakwa" %} selected="selected" {% endif %}>Abuakwa</option>
+  <option value="Accra" {% if src=="Accra" %} selected="selected" {% endif %}>Accra</option>
+  <option value="Acherensua" {% if src=="Acherensua" %} selected="selected" {% endif %}>Acherensua</option>
+  <option value="Achiase" {% if src=="Achiase" %} selected="selected" {% endif %}>Achiase</option>
+  <option value="Adabraka" {% if src=="Adabraka" %} selected="selected" {% endif %}>Adabraka</option>
+  <option value="Adjemasu" {% if src=="Adjemasu" %} selected="selected" {% endif %}>Adjemasu</option>
+  <option value="Adobewora" {% if src=="Adobewora" %} selected="selected" {% endif %}>Adobewora</option>
+  <option value="Adubia" {% if src=="Adubia" %} selected="selected" {% endif %}>Adubia</option>
+  <option value="Adukrom" {% if src=="Adukrom" %} selected="selected" {% endif %}>Adukrom</option>
+  <option value="Adum" {% if src=="Adum" %} selected="selected" {% endif %}>Adum</option>
+  <option value="Adwaase New site" {% if src=="Adwaase New site" %} selected="selected" {% endif %}>Adwaase New site</option>
+  <option value="Afful Nkwanta" {% if src=="Afful Nkwanta" %} selected="selected" {% endif %}>Afful Nkwanta</option>
+  <option value="Agona Wasa" {% if src=="Agona Wasa" %} selected="selected" {% endif %}>Agona Wasa</option>
+  <option value="Agoroyesum" {% if src=="Agoroyesum" %} selected="selected" {% endif %}>Agoroyesum</option>
+  <option value="Agyemasu" {% if src=="Agyemasu" %} selected="selected" {% endif %}>Agyemasu</option>
+  <option value="Ahafo Kenyase" {% if src=="Ahafo Kenyase" %} selected="selected" {% endif %}>Ahafo Kenyase</option>
+  <option value="Ahenema Kokoben" {% if src=="Ahenema Kokoben" %} selected="selected" {% endif %}>Ahenema Kokoben</option>
+  <option value="Ahiaw Nkwanta" {% if src=="Ahiaw Nkwanta" %} selected="selected" {% endif %}>Ahiaw Nkwanta</option>
+  <option value="Ahinsan" {% if src=="Ahinsan" %} selected="selected" {% endif %}>Ahinsan</option>
+  <option value="Ahinsan Market" {% if src=="Ahinsan Market" %} selected="selected" {% endif %}>Ahinsan Market</option>
+  <option value="Ahinsan,Bus Stop" {% if src=="Ahinsan,Bus Stop" %} selected="selected" {% endif %}>Ahinsan,Bus Stop</option>
+  <option value="Ahodwo" {% if src=="Ahodwo" %} selected="selected" {% endif %}>Ahodwo</option>
+  <option value="Ahodwo Melcom" {% if src=="Ahodwo Melcom" %} selected="selected" {% endif %}>Ahodwo Melcom</option>
+  <option value="Ahodwo Roundabout" {% if src=="Ahodwo Roundabout" %} selected="selected" {% endif %}>Ahodwo Roundabout</option>
+  <option value="Ahodwo Station" {% if src=="Ahodwo Station" %} selected="selected" {% endif %}>Ahodwo Station</option>
+  <option value="Ahutoakrom" {% if src=="Ahutoakrom" %} selected="selected" {% endif %}>Ahutoakrom</option>
+  <option value="Ahwia" {% if src=="Ahwia" %} selected="selected" {% endif %}>Ahwia</option>
+  <option value="Ahwia Nkwanta" {% if src=="Ahwia Nkwanta" %} selected="selected" {% endif %}>Ahwia Nkwanta</option>
+  <option value="Akoko Spears" {% if src=="Akoko Spears" %} selected="selected" {% endif %}>Akoko Spears</option>
+  <option value="Akomadam" {% if src=="Akomadam" %} selected="selected" {% endif %}>Akomadam</option>
+  <option value="Akyekyekrom" {% if src=="Akyekyekrom" %} selected="selected" {% endif %}>Akyekyekrom</option>
+  <option value="Amakom" {% if src=="Amakom" %} selected="selected" {% endif %}>Amakom</option>
+  <option value="Amanfrom" {% if src=="Amanfrom" %} selected="selected" {% endif %}>Amanfrom</option>
+  <option value="Amoakokrom" {% if src=="Amoakokrom" %} selected="selected" {% endif %}>Amoakokrom</option>
+  <option value="Amoaya" {% if src=="Amoaya" %} selected="selected" {% endif %}>Amoaya</option>
+  <option value="Ampabame(Sokoban)" {% if src=="Ampabame(Sokoban)" %} selected="selected" {% endif %}>Ampabame(Sokoban)</option>
+  <option value="Ampayoo" {% if src=="Ampayoo" %} selected="selected" {% endif %}>Ampayoo</option>
+  <option value="Ankaasie" {% if src=="Ankaasie" %} selected="selected" {% endif %}>Ankaasie</option>
+  <option value="Anloga Junction" {% if src=="Anloga Junction" %} selected="selected" {% endif %}>Anloga Junction</option>
+  <option value="Antoa" {% if src=="Antoa" %} selected="selected" {% endif %}>Antoa</option>
+  <option value="Anwia Nkwanta" {% if src=="Anwia Nkwanta" %} selected="selected" {% endif %}>Anwia Nkwanta</option>
+  <option value="Anwomaso" {% if src=="Anwomaso" %} selected="selected" {% endif %}>Anwomaso</option>
+  <option value="Anyanfore" {% if src=="Anyanfore" %} selected="selected" {% endif %}>Anyanfore</option>
+  <option value="Anyinam Kotwi" {% if src=="Anyinam Kotwi" %} selected="selected" {% endif %}>Anyinam Kotwi</option>
+  <option value="Anyinasuso" {% if src=="Anyinasuso" %} selected="selected" {% endif %}>Anyinasuso</option>
+  <option value="Aponaponso" {% if src=="Aponaponso" %} selected="selected" {% endif %}>Aponaponso</option>
+  <option value="Appiadu" {% if src=="Appiadu" %} selected="selected" {% endif %}>Appiadu</option>
+  <option value="Appiadu Kokoben" {% if src=="Appiadu Kokoben" %} selected="selected" {% endif %}>Appiadu Kokoben</option>
+  <option value="Aprabo" {% if src=="Aprabo" %} selected="selected" {% endif %}>Aprabo</option>
+  <option value="Aprade" {% if src=="Aprade" %} selected="selected" {% endif %}>Aprade</option>
+  <option value="Apromase" {% if src=="Apromase" %} selected="selected" {% endif %}>Apromase</option>
+  <option value="Aputuogya" {% if src=="Aputuogya" %} selected="selected" {% endif %}>Aputuogya</option>
+  <option value="Asafo" {% if src=="Asafo" %} selected="selected" {% endif %}>Asafo</option>
+  <option value="Asafo Labour" {% if src=="Asafo Labour" %} selected="selected" {% endif %}>Asafo Labour</option>
+  <option value="Asafo Market" {% if src=="Asafo Market" %} selected="selected" {% endif %}>Asafo Market</option>
+  <option value="Asafo, Labour" {% if src=="Asafo, Labour" %} selected="selected" {% endif %}>Asafo, Labour</option>
+  <option value="Asamang" {% if src=="Asamang" %} selected="selected" {% endif %}>Asamang</option>
+  <option value="Asante Akyem, Agogo" {% if src=="Asante Akyem, Agogo" %} selected="selected" {% endif %}>Asante Akyem, Agogo</option>
+  <option value="Asante Bekwai" {% if src=="Asante Bekwai" %} selected="selected" {% endif %}>Asante Bekwai</option>
+  <option value="Asawase" {% if src=="Asawase" %} selected="selected" {% endif %}>Asawase</option>
+  <option value="Asawinso" {% if src=="Asawinso" %} selected="selected" {% endif %}>Asawinso</option>
+  <option value="Asenua" {% if src=="Asenua" %} selected="selected" {% endif %}>Asenua</option>
+  <option value="Asiyon" {% if src=="Asiyon" %} selected="selected" {% endif %}>Asiyon</option>
+  <option value="Asokwa" {% if src=="Asokwa" %} selected="selected" {% endif %}>Asokwa</option>
+  <option value="Asuofia" {% if src=="Asuofia" %} selected="selected" {% endif %}>Asuofia</option>
+  <option value="Asuofua" {% if src=="Asuofua" %} selected="selected" {% endif %}>Asuofua</option>
+  <option value="Asuoyeboa" {% if src=="Asuoyeboa" %} selected="selected" {% endif %}>Asuoyeboa</option>
+  <option value="Asuoyeboah" {% if src=="Asuoyeboah" %} selected="selected" {% endif %}>Asuoyeboah</option>
+  <option value="Atafoa" {% if src=="Atafoa" %} selected="selected" {% endif %}>Atafoa</option>
+  <option value="Atasomanso" {% if src=="Atasomanso" %} selected="selected" {% endif %}>Atasomanso</option>
+  <option value="Atinga Junction" {% if src=="Atinga Junction" %} selected="selected" {% endif %}>Atinga Junction</option>
+  <option value="Atonsu" {% if src=="Atonsu" %} selected="selected" {% endif %}>Atonsu</option>
+  <option value="Atonsu Agogo" {% if src=="Atonsu Agogo" %} selected="selected" {% endif %}>Atonsu Agogo</option>
+  <option value="Atonsu, Agogo" {% if src=="Atonsu, Agogo" %} selected="selected" {% endif %}>Atonsu, Agogo</option>
+  <option value="Atonsu, Ako Junction" {% if src=="Atonsu, Ako Junction" %} selected="selected" {% endif %}>Atonsu, Ako Junction</option>
+  <option value="Atonsu, Bokro Ako Junction" {% if src=="Atonsu, Bokro Ako Junction" %} selected="selected" {% endif %}>Atonsu, Bokro Ako Junction</option>
+  <option value="Atonsu, Bokro Last Stop" {% if src=="Atonsu, Bokro Last Stop" %} selected="selected" {% endif %}>Atonsu, Bokro Last Stop</option>
+  <option value="Atonsu, High School" {% if src=="Atonsu, High School" %} selected="selected" {% endif %}>Atonsu, High School</option>
+  <option value="Atonsu, High School Junction" {% if src=="Atonsu, High School Junction" %} selected="selected" {% endif %}>Atonsu, High School Junction</option>
+  <option value="Atonsu, High Scool" {% if src=="Atonsu, High Scool" %} selected="selected" {% endif %}>Atonsu, High Scool</option>
+  <option value="Atonsu, Monanco" {% if src=="Atonsu, Monanco" %} selected="selected" {% endif %}>Atonsu, Monanco</option>
+  <option value="Atonsu,Agogo" {% if src=="Atonsu,Agogo" %} selected="selected" {% endif %}>Atonsu,Agogo</option>
+  <option value="Atonsu,Monanco" {% if src=="Atonsu,Monanco" %} selected="selected" {% endif %}>Atonsu,Monanco</option>
+  <option value="Awidiem" {% if src=="Awidiem" %} selected="selected" {% endif %}>Awidiem</option>
+  <option value="Ayebikrom" {% if src=="Ayebikrom" %} selected="selected" {% endif %}>Ayebikrom</option>
+  <option value="Ayeduase" {% if src=="Ayeduase" %} selected="selected" {% endif %}>Ayeduase</option>
+  <option value="Ayimi" {% if src=="Ayimi" %} selected="selected" {% endif %}>Ayimi</option>
+  <option value="Baba Yara Sports Stadium" {% if src=="Baba Yara Sports Stadium" %} selected="selected" {% endif %}>Baba Yara Sports Stadium</option>
+  <option value="Bamfo Juntion" {% if src=="Bamfo Juntion" %} selected="selected" {% endif %}>Bamfo Juntion</option>
+  <option value="Bantama" {% if src=="Bantama" %} selected="selected" {% endif %}>Bantama</option>
+  <option value="BarNas" {% if src=="BarNas" %} selected="selected" {% endif %}>BarNas</option>
+  <option value="Bekwai" {% if src=="Bekwai" %} selected="selected" {% endif %}>Bekwai</option>
+  <option value="Bekwai Roundabout" {% if src=="Bekwai Roundabout" %} selected="selected" {% endif %}>Bekwai Roundabout</option>
+  <option value="Besease" {% if src=="Besease" %} selected="selected" {% endif %}>Besease</option>
+  <option value="Boadi" {% if src=="Boadi" %} selected="selected" {% endif %}>Boadi</option>
+  <option value="Boahenekwaa" {% if src=="Boahenekwaa" %} selected="selected" {% endif %}>Boahenekwaa</option>
+  <option value="Bodie" {% if src=="Bodie" %} selected="selected" {% endif %}>Bodie</option>
+  <option value="Bofoyedur" {% if src=="Bofoyedur" %} selected="selected" {% endif %}>Bofoyedur</option>
+  <option value="Bogoso" {% if src=="Bogoso" %} selected="selected" {% endif %}>Bogoso</option>
+  <option value="Bohyen" {% if src=="Bohyen" %} selected="selected" {% endif %}>Bohyen</option>
+  <option value="Bohyen Ampame" {% if src=="Bohyen Ampame" %} selected="selected" {% endif %}>Bohyen Ampame</option>
+  <option value="Bokabo" {% if src=="Bokabo" %} selected="selected" {% endif %}>Bokabo</option>
+  <option value="Bokro" {% if src=="Bokro" %} selected="selected" {% endif %}>Bokro</option>
+  <option value="Bokuruwa" {% if src=="Bokuruwa" %} selected="selected" {% endif %}>Bokuruwa</option>
+  <option value="Bomso" {% if src=="Bomso" %} selected="selected" {% endif %}>Bomso</option>
+  <option value="Bonsu Nkwanta" {% if src=="Bonsu Nkwanta" %} selected="selected" {% endif %}>Bonsu Nkwanta</option>
+  <option value="Bonsukrom" {% if src=="Bonsukrom" %} selected="selected" {% endif %}>Bonsukrom</option>
+  <option value="Bontomoroso" {% if src=="Bontomoroso" %} selected="selected" {% endif %}>Bontomoroso</option>
+  <option value="Bonwire" {% if src=="Bonwire" %} selected="selected" {% endif %}>Bonwire</option>
+  <option value="Boodie" {% if src=="Boodie" %} selected="selected" {% endif %}>Boodie</option>
+  <option value="Brepro" {% if src=="Brepro" %} selected="selected" {% endif %}>Brepro</option>
+  <option value="Brewery" {% if src=="Brewery" %} selected="selected" {% endif %}>Brewery</option>
+  <option value="Brofoyedu" {% if src=="Brofoyedu" %} selected="selected" {% endif %}>Brofoyedu</option>
+  <option value="Brofoyedur" {% if src=="Brofoyedur" %} selected="selected" {% endif %}>Brofoyedur</option>
+  <option value="Buokrom" {% if src=="Buokrom" %} selected="selected" {% endif %}>Buokrom</option>
+  <option value="Buokrom South" {% if src=="Buokrom South" %} selected="selected" {% endif %}>Buokrom South</option>
+  <option value="County Hospital" {% if src=="County Hospital" %} selected="selected" {% endif %}>County Hospital</option>
+  <option value="County Hospital (Abrepo)" {% if src=="County Hospital (Abrepo)" %} selected="selected" {% endif %}>County Hospital (Abrepo)</option>
+  <option value="Daban" {% if src=="Daban" %} selected="selected" {% endif %}>Daban</option>
+  <option value="Dakwadwom" {% if src=="Dakwadwom" %} selected="selected" {% endif %}>Dakwadwom</option>
+  <option value="Datano" {% if src=="Datano" %} selected="selected" {% endif %}>Datano</option>
+  <option value="Dedieso" {% if src=="Dedieso" %} selected="selected" {% endif %}>Dedieso</option>
+  <option value="Deduako" {% if src=="Deduako" %} selected="selected" {% endif %}>Deduako</option>
+  <option value="Dichems" {% if src=="Dichems" %} selected="selected" {% endif %}>Dichems</option>
+  <option value="Dichemso" {% if src=="Dichemso" %} selected="selected" {% endif %}>Dichemso</option>
+  <option value="Domeabra" {% if src=="Domeabra" %} selected="selected" {% endif %}>Domeabra</option>
+  <option value="Domenase" {% if src=="Domenase" %} selected="selected" {% endif %}>Domenase</option>
+  <option value="Dominase" {% if src=="Dominase" %} selected="selected" {% endif %}>Dominase</option>
+  <option value="Dominase Nkwanta" {% if src=="Dominase Nkwanta" %} selected="selected" {% endif %}>Dominase Nkwanta</option>
+  <option value="Dompoase Aprabo" {% if src=="Dompoase Aprabo" %} selected="selected" {% endif %}>Dompoase Aprabo</option>
+  <option value="Donyinah" {% if src=="Donyinah" %} selected="selected" {% endif %}>Donyinah</option>
+  <option value="Duase" {% if src=="Duase" %} selected="selected" {% endif %}>Duase</option>
+  <option value="Edwanase" {% if src=="Edwanase" %} selected="selected" {% endif %}>Edwanase</option>
+  <option value="Edwenase" {% if src=="Edwenase" %} selected="selected" {% endif %}>Edwenase</option>
+  <option value="Effiduase" {% if src=="Effiduase" %} selected="selected" {% endif %}>Effiduase</option>
+  <option value="Ejisu" {% if src=="Ejisu" %} selected="selected" {% endif %}>Ejisu</option>
+  <option value="Emina" {% if src=="Emina" %} selected="selected" {% endif %}>Emina</option>
+  <option value="Esieinkyem" {% if src=="Esieinkyem" %} selected="selected" {% endif %}>Esieinkyem</option>
+  <option value="Esreso" {% if src=="Esreso" %} selected="selected" {% endif %}>Esreso</option>
+  <option value="Estate Junction" {% if src=="Estate Junction" %} selected="selected" {% endif %}>Estate Junction</option>
+  <option value="F Line" {% if src=="F Line" %} selected="selected" {% endif %}>F Line</option>
+  <option value="F line" {% if src=="F line" %} selected="selected" {% endif %}>F line</option>
+  <option value="F-Line" {% if src=="F-Line" %} selected="selected" {% endif %}>F-Line</option>
+  <option value="Fawoade" {% if src=="Fawoade" %} selected="selected" {% endif %}>Fawoade</option>
+  <option value="Fawode" {% if src=="Fawode" %} selected="selected" {% endif %}>Fawode</option>
+  <option value="Feyiase Kokoben" {% if src=="Feyiase Kokoben" %} selected="selected" {% endif %}>Feyiase Kokoben</option>
+  <option value="Foese Kokoben" {% if src=="Foese Kokoben" %} selected="selected" {% endif %}>Foese Kokoben</option>
+  <option value="Fomena" {% if src=="Fomena" %} selected="selected" {% endif %}>Fomena</option>
+  <option value="Fumesua" {% if src=="Fumesua" %} selected="selected" {% endif %}>Fumesua</option>
+  <option value="Fumesua Kyirekrom" {% if src=="Fumesua Kyirekrom" %} selected="selected" {% endif %}>Fumesua Kyirekrom</option>
+  <option value="Gawo Junction" {% if src=="Gawo Junction" %} selected="selected" {% endif %}>Gawo Junction</option>
+  <option value="Goaso" {% if src=="Goaso" %} selected="selected" {% endif %}>Goaso</option>
+  <option value="Guinness Brewery" {% if src=="Guinness Brewery" %} selected="selected" {% endif %}>Guinness Brewery</option>
+  <option value="Gyapa" {% if src=="Gyapa" %} selected="selected" {% endif %}>Gyapa</option>
+  <option value="Gyinase" {% if src=="Gyinase" %} selected="selected" {% endif %}>Gyinase</option>
+  <option value="IPT" {% if src=="IPT" %} selected="selected" {% endif %}>IPT</option>
+  <option value="Islamic SHS" {% if src=="Islamic SHS" %} selected="selected" {% endif %}>Islamic SHS</option>
+  <option value="Jachie" {% if src=="Jachie" %} selected="selected" {% endif %}>Jachie</option>
+  <option value="Jachie Pramso" {% if src=="Jachie Pramso" %} selected="selected" {% endif %}>Jachie Pramso</option>
+  <option value="Jadua Kese" {% if src=="Jadua Kese" %} selected="selected" {% endif %}>Jadua Kese</option>
+  <option value="Juaso" {% if src=="Juaso" %} selected="selected" {% endif %}>Juaso</option>
+  <option value="Kaase" {% if src=="Kaase" %} selected="selected" {% endif %}>Kaase</option>
+  <option value="Kahuro" {% if src=="Kahuro" %} selected="selected" {% endif %}>Kahuro</option>
+  <option value="Kamiaago" {% if src=="Kamiaago" %} selected="selected" {% endif %}>Kamiaago</option>
+  <option value="Kejetia" {% if src=="Kejetia" %} selected="selected" {% endif %}>Kejetia</option>
+  <option value="Kejetia Roman Hill" {% if src=="Kejetia Roman Hill" %} selected="selected" {% endif %}>Kejetia Roman Hill</option>
+  <option value="Kejetia, Dr Mensah" {% if src=="Kejetia, Dr Mensah" %} selected="selected" {% endif %}>Kejetia, Dr Mensah</option>
+  <option value="Kejetia, Roman Hill" {% if src=="Kejetia, Roman Hill" %} selected="selected" {% endif %}>Kejetia, Roman Hill</option>
+  <option value="Kentinkrono" {% if src=="Kentinkrono" %} selected="selected" {% endif %}>Kentinkrono</option>
+  <option value="Kenyase" {% if src=="Kenyase" %} selected="selected" {% endif %}>Kenyase</option>
+  <option value="Kintampo" {% if src=="Kintampo" %} selected="selected" {% endif %}>Kintampo</option>
+  <option value="Koforidua" {% if src=="Koforidua" %} selected="selected" {% endif %}>Koforidua</option>
+  <option value="Kokofu" {% if src=="Kokofu" %} selected="selected" {% endif %}>Kokofu</option>
+  <option value="Kole" {% if src=="Kole" %} selected="selected" {% endif %}>Kole</option>
+  <option value="Komfo Anokye Hospital" {% if src=="Komfo Anokye Hospital" %} selected="selected" {% endif %}>Komfo Anokye Hospital</option>
+  <option value="Konogo" {% if src=="Konogo" %} selected="selected" {% endif %}>Konogo</option>
+  <option value="Konongo" {% if src=="Konongo" %} selected="selected" {% endif %}>Konongo</option>
+  <option value="Kotei" {% if src=="Kotei" %} selected="selected" {% endif %}>Kotei</option>
+  <option value="Kotwi" {% if src=="Kotwi" %} selected="selected" {% endif %}>Kotwi</option>
+  <option value="Kroform" {% if src=="Kroform" %} selected="selected" {% endif %}>Kroform</option>
+  <option value="Krofrom" {% if src=="Krofrom" %} selected="selected" {% endif %}>Krofrom</option>
+  <option value="Krofrom (New Tafo)" {% if src=="Krofrom (New Tafo)" %} selected="selected" {% endif %}>Krofrom (New Tafo)</option>
+  <option value="Krofrom Sokoban Road" {% if src=="Krofrom Sokoban Road" %} selected="selected" {% endif %}>Krofrom Sokoban Road</option>
+  <option value="Krofrom(New Tafo)" {% if src=="Krofrom(New Tafo)" %} selected="selected" {% endif %}>Krofrom(New Tafo)</option>
+  <option value="Kronom" {% if src=="Kronom" %} selected="selected" {% endif %}>Kronom</option>
+  <option value="Kumasi Aiport Roundabout" {% if src=="Kumasi Aiport Roundabout" %} selected="selected" {% endif %}>Kumasi Aiport Roundabout</option>
+  <option value="Kumasi Airport" {% if src=="Kumasi Airport" %} selected="selected" {% endif %}>Kumasi Airport</option>
+  <option value="Kumasi Airport Rounabout" {% if src=="Kumasi Airport Rounabout" %} selected="selected" {% endif %}>Kumasi Airport Rounabout</option>
+  <option value="Kumasi Airport Roundabout" {% if src=="Kumasi Airport Roundabout" %} selected="selected" {% endif %}>Kumasi Airport Roundabout</option>
+  <option value="Kumasi City Mall" {% if src=="Kumasi City Mall" %} selected="selected" {% endif %}>Kumasi City Mall</option>
+  <option value="Kumasi Girls School" {% if src=="Kumasi Girls School" %} selected="selected" {% endif %}>Kumasi Girls School</option>
+  <option value="Kumasi UEW" {% if src=="Kumasi UEW" %} selected="selected" {% endif %}>Kumasi UEW</option>
+  <option value="Kumawu" {% if src=="Kumawu" %} selected="selected" {% endif %}>Kumawu</option>
+  <option value="Kutenase" {% if src=="Kutenase" %} selected="selected" {% endif %}>Kutenase</option>
+  <option value="Kuwait" {% if src=="Kuwait" %} selected="selected" {% endif %}>Kuwait</option>
+  <option value="Kwadaso" {% if src=="Kwadaso" %} selected="selected" {% endif %}>Kwadaso</option>
+  <option value="Kwadaso IPT" {% if src=="Kwadaso IPT" %} selected="selected" {% endif %}>Kwadaso IPT</option>
+  <option value="Kwadwo" {% if src=="Kwadwo" %} selected="selected" {% endif %}>Kwadwo</option>
+  <option value="Kwamo" {% if src=="Kwamo" %} selected="selected" {% endif %}>Kwamo</option>
+  <option value="Kwatereso" {% if src=="Kwatereso" %} selected="selected" {% endif %}>Kwatereso</option>
+  <option value="Maakro" {% if src=="Maakro" %} selected="selected" {% endif %}>Maakro</option>
+  <option value="Mampenase" {% if src=="Mampenase" %} selected="selected" {% endif %}>Mampenase</option>
+  <option value="Mampongteng" {% if src=="Mampongteng" %} selected="selected" {% endif %}>Mampongteng</option>
+  <option value="Mamponteng" {% if src=="Mamponteng" %} selected="selected" {% endif %}>Mamponteng</option>
+  <option value="Manso Abure" {% if src=="Manso Abure" %} selected="selected" {% endif %}>Manso Abure</option>
+  <option value="Manso Atwere" {% if src=="Manso Atwere" %} selected="selected" {% endif %}>Manso Atwere</option>
+  <option value="Manso Nkwanta" {% if src=="Manso Nkwanta" %} selected="selected" {% endif %}>Manso Nkwanta</option>
+  <option value="Mayanka" {% if src=="Mayanka" %} selected="selected" {% endif %}>Mayanka</option>
+  <option value="Medoma" {% if src=="Medoma" %} selected="selected" {% endif %}>Medoma</option>
+  <option value="Moshie Zongo" {% if src=="Moshie Zongo" %} selected="selected" {% endif %}>Moshie Zongo</option>
+  <option value="Mr Mote" {% if src=="Mr Mote" %} selected="selected" {% endif %}>Mr Mote</option>
+  <option value="Nahinso" {% if src=="Nahinso" %} selected="selected" {% endif %}>Nahinso</option>
+  <option value="Nana Appiah" {% if src=="Nana Appiah" %} selected="selected" {% endif %}>Nana Appiah</option>
+  <option value="Nana Ho" {% if src=="Nana Ho" %} selected="selected" {% endif %}>Nana Ho</option>
+  <option value="New Edubiase" {% if src=="New Edubiase" %} selected="selected" {% endif %}>New Edubiase</option>
+  <option value="Nkawkaw" {% if src=="Nkawkaw" %} selected="selected" {% endif %}>Nkawkaw</option>
+  <option value="Nkonya" {% if src=="Nkonya" %} selected="selected" {% endif %}>Nkonya</option>
+  <option value="Nkoransah" {% if src=="Nkoransah" %} selected="selected" {% endif %}>Nkoransah</option>
+  <option value="Nkronsa" {% if src=="Nkronsa" %} selected="selected" {% endif %}>Nkronsa</option>
+  <option value="Nkronsah" {% if src=="Nkronsah" %} selected="selected" {% endif %}>Nkronsah</option>
+  <option value="Nkwakwa" {% if src=="Nkwakwa" %} selected="selected" {% endif %}>Nkwakwa</option>
+  <option value="Nsuterm" {% if src=="Nsuterm" %} selected="selected" {% endif %}>Nsuterm</option>
+  <option value="Ntonsu" {% if src=="Ntonsu" %} selected="selected" {% endif %}>Ntonsu</option>
+  <option value="Nyamebekyere" {% if src=="Nyamebekyere" %} selected="selected" {% endif %}>Nyamebekyere</option>
+  <option value="Nyamebekyere Camp" {% if src=="Nyamebekyere Camp" %} selected="selected" {% endif %}>Nyamebekyere Camp</option>
+  <option value="Obofour" {% if src=="Obofour" %} selected="selected" {% endif %}>Obofour</option>
+  <option value="Odum" {% if src=="Odum" %} selected="selected" {% endif %}>Odum</option>
+  <option value="Offinso" {% if src=="Offinso" %} selected="selected" {% endif %}>Offinso</option>
+  <option value="Oforikrom" {% if src=="Oforikrom" %} selected="selected" {% endif %}>Oforikrom</option>
+  <option value="Ohwim" {% if src=="Ohwim" %} selected="selected" {% endif %}>Ohwim</option>
+  <option value="Old Ash FM" {% if src=="Old Ash FM" %} selected="selected" {% endif %}>Old Ash FM</option>
+  <option value="Opoku Ware School" {% if src=="Opoku Ware School" %} selected="selected" {% endif %}>Opoku Ware School</option>
+  <option value="Ownien" {% if src=="Ownien" %} selected="selected" {% endif %}>Ownien</option>
+  <option value="Pankrono" {% if src=="Pankrono" %} selected="selected" {% endif %}>Pankrono</option>
+  <option value="Parkoso" {% if src=="Parkoso" %} selected="selected" {% endif %}>Parkoso</option>
+  <option value="Patasi" {% if src=="Patasi" %} selected="selected" {% endif %}>Patasi</option>
+  <option value="Pataukro" {% if src=="Pataukro" %} selected="selected" {% endif %}>Pataukro</option>
+  <option value="Pekyi 1" {% if src=="Pekyi 1" %} selected="selected" {% endif %}>Pekyi 1</option>
+  <option value="Pekyi 2" {% if src=="Pekyi 2" %} selected="selected" {% endif %}>Pekyi 2</option>
+  <option value="Pekyi N01" {% if src=="Pekyi N01" %} selected="selected" {% endif %}>Pekyi N01</option>
+  <option value="Pekyi N02" {% if src=="Pekyi N02" %} selected="selected" {% endif %}>Pekyi N02</option>
+  <option value="Pekyi No1" {% if src=="Pekyi No1" %} selected="selected" {% endif %}>Pekyi No1</option>
+  <option value="Pokuase" {% if src=="Pokuase" %} selected="selected" {% endif %}>Pokuase</option>
+  <option value="Prestia" {% if src=="Prestia" %} selected="selected" {% endif %}>Prestia</option>
+  <option value="Ramseyer" {% if src=="Ramseyer" %} selected="selected" {% endif %}>Ramseyer</option>
+  <option value="Sabronum" {% if src=="Sabronum" %} selected="selected" {% endif %}>Sabronum</option>
+  <option value="Sankore" {% if src=="Sankore" %} selected="selected" {% endif %}>Sankore</option>
+  <option value="Santasi" {% if src=="Santasi" %} selected="selected" {% endif %}>Santasi</option>
+  <option value="Santasi Roundabout" {% if src=="Santasi Roundabout" %} selected="selected" {% endif %}>Santasi Roundabout</option>
+  <option value="Santasi, Anyinam" {% if src=="Santasi, Anyinam" %} selected="selected" {% endif %}>Santasi, Anyinam</option>
+  <option value="Sepe" {% if src=="Sepe" %} selected="selected" {% endif %}>Sepe</option>
+  <option value="Sofoline" {% if src=="Sofoline" %} selected="selected" {% endif %}>Sofoline</option>
+  <option value="Sokoban" {% if src=="Sokoban" %} selected="selected" {% endif %}>Sokoban</option>
+  <option value="St Abed" {% if src=="St Abed" %} selected="selected" {% endif %}>St Abed</option>
+  <option value="Stadium" {% if src=="Stadium" %} selected="selected" {% endif %}>Stadium</option>
+  <option value="Star Junction" {% if src=="Star Junction" %} selected="selected" {% endif %}>Star Junction</option>
+  <option value="Suame Rounabout" {% if src=="Suame Rounabout" %} selected="selected" {% endif %}>Suame Rounabout</option>
+  <option value="Suame Roundabout" {% if src=="Suame Roundabout" %} selected="selected" {% endif %}>Suame Roundabout</option>
+  <option value="Suame, Magazine" {% if src=="Suame, Magazine" %} selected="selected" {% endif %}>Suame, Magazine</option>
+  <option value="Susuanso" {% if src=="Susuanso" %} selected="selected" {% endif %}>Susuanso</option>
+  <option value="Susuaso" {% if src=="Susuaso" %} selected="selected" {% endif %}>Susuaso</option>
+  <option value="Tafo" {% if src=="Tafo" %} selected="selected" {% endif %}>Tafo</option>
+  <option value="Takoradi" {% if src=="Takoradi" %} selected="selected" {% endif %}>Takoradi</option>
+  <option value="Tanoso" {% if src=="Tanoso" %} selected="selected" {% endif %}>Tanoso</option>
+  <option value="Tech" {% if src=="Tech" %} selected="selected" {% endif %}>Tech</option>
+  <option value="Tech Junction" {% if src=="Tech Junction" %} selected="selected" {% endif %}>Tech Junction</option>
+  <option value="Techiman" {% if src=="Techiman" %} selected="selected" {% endif %}>Techiman</option>
+  <option value="Tepa" {% if src=="Tepa" %} selected="selected" {% endif %}>Tepa</option>
+  <option value="Totokrom" {% if src=="Totokrom" %} selected="selected" {% endif %}>Totokrom</option>
+  <option value="Trede" {% if src=="Trede" %} selected="selected" {% endif %}>Trede</option>
+  <option value="TUC" {% if src=="TUC" %} selected="selected" {% endif %}>TUC</option>
+  <option value="Wasa Akropong" {% if src=="Wasa Akropong" %} selected="selected" {% endif %}>Wasa Akropong</option>
+  <option value="Wenchi" {% if src=="Wenchi" %} selected="selected" {% endif %}>Wenchi</option>
+  <option value="Yard" {% if src=="Yard" %} selected="selected" {% endif %}>Yard</option>
+  <option value="Yawkese" {% if src=="Yawkese" %} selected="selected" {% endif %}>Yawkese</option>
+</select></div>
+    <div><label for='dest'>To :</label></div>
+    <div><select id='dest' name="dest ">
+  <option value="+2Pub" {% if src=="+2Pub" %} selected="selected" {% endif %}>+2Pub</option>
+  <option value="A Line" {% if src=="A Line" %} selected="selected" {% endif %}>A Line</option>
+  <option value="A line" {% if src=="A line" %} selected="selected" {% endif %}>A line</option>
+  <option value="Aboabo" {% if src=="Aboabo" %} selected="selected" {% endif %}>Aboabo</option>
+  <option value="Aboahu" {% if src=="Aboahu" %} selected="selected" {% endif %}>Aboahu</option>
+  <option value="Aboaso" {% if src=="Aboaso" %} selected="selected" {% endif %}>Aboaso</option>
+  <option value="Abobaso" {% if src=="Abobaso" %} selected="selected" {% endif %}>Abobaso</option>
+  <option value="Abono" {% if src=="Abono" %} selected="selected" {% endif %}>Abono</option>
+  <option value="Aboude TUC" {% if src=="Aboude TUC" %} selected="selected" {% endif %}>Aboude TUC</option>
+  <option value="Abrepo" {% if src=="Abrepo" %} selected="selected" {% endif %}>Abrepo</option>
+  <option value="Abrepo Junction" {% if src=="Abrepo Junction" %} selected="selected" {% endif %}>Abrepo Junction</option>
+  <option value="Abuakwa" {% if src=="Abuakwa" %} selected="selected" {% endif %}>Abuakwa</option>
+  <option value="Accra" {% if src=="Accra" %} selected="selected" {% endif %}>Accra</option>
+  <option value="Acherensua" {% if src=="Acherensua" %} selected="selected" {% endif %}>Acherensua</option>
+  <option value="Achiase" {% if src=="Achiase" %} selected="selected" {% endif %}>Achiase</option>
+  <option value="Adabraka" {% if src=="Adabraka" %} selected="selected" {% endif %}>Adabraka</option>
+  <option value="Adjemasu" {% if src=="Adjemasu" %} selected="selected" {% endif %}>Adjemasu</option>
+  <option value="Adobewora" {% if src=="Adobewora" %} selected="selected" {% endif %}>Adobewora</option>
+  <option value="Adubia" {% if src=="Adubia" %} selected="selected" {% endif %}>Adubia</option>
+  <option value="Adukrom" {% if src=="Adukrom" %} selected="selected" {% endif %}>Adukrom</option>
+  <option value="Adum" {% if src=="Adum" %} selected="selected" {% endif %}>Adum</option>
+  <option value="Adwaase New site" {% if src=="Adwaase New site" %} selected="selected" {% endif %}>Adwaase New site</option>
+  <option value="Afful Nkwanta" {% if src=="Afful Nkwanta" %} selected="selected" {% endif %}>Afful Nkwanta</option>
+  <option value="Agona Wasa" {% if src=="Agona Wasa" %} selected="selected" {% endif %}>Agona Wasa</option>
+  <option value="Agoroyesum" {% if src=="Agoroyesum" %} selected="selected" {% endif %}>Agoroyesum</option>
+  <option value="Agyemasu" {% if src=="Agyemasu" %} selected="selected" {% endif %}>Agyemasu</option>
+  <option value="Ahafo Kenyase" {% if src=="Ahafo Kenyase" %} selected="selected" {% endif %}>Ahafo Kenyase</option>
+  <option value="Ahenema Kokoben" {% if src=="Ahenema Kokoben" %} selected="selected" {% endif %}>Ahenema Kokoben</option>
+  <option value="Ahiaw Nkwanta" {% if src=="Ahiaw Nkwanta" %} selected="selected" {% endif %}>Ahiaw Nkwanta</option>
+  <option value="Ahinsan" {% if src=="Ahinsan" %} selected="selected" {% endif %}>Ahinsan</option>
+  <option value="Ahinsan Market" {% if src=="Ahinsan Market" %} selected="selected" {% endif %}>Ahinsan Market</option>
+  <option value="Ahinsan,Bus Stop" {% if src=="Ahinsan,Bus Stop" %} selected="selected" {% endif %}>Ahinsan,Bus Stop</option>
+  <option value="Ahodwo" {% if src=="Ahodwo" %} selected="selected" {% endif %}>Ahodwo</option>
+  <option value="Ahodwo Melcom" {% if src=="Ahodwo Melcom" %} selected="selected" {% endif %}>Ahodwo Melcom</option>
+  <option value="Ahodwo Roundabout" {% if src=="Ahodwo Roundabout" %} selected="selected" {% endif %}>Ahodwo Roundabout</option>
+  <option value="Ahodwo Station" {% if src=="Ahodwo Station" %} selected="selected" {% endif %}>Ahodwo Station</option>
+  <option value="Ahutoakrom" {% if src=="Ahutoakrom" %} selected="selected" {% endif %}>Ahutoakrom</option>
+  <option value="Ahwia" {% if src=="Ahwia" %} selected="selected" {% endif %}>Ahwia</option>
+  <option value="Ahwia Nkwanta" {% if src=="Ahwia Nkwanta" %} selected="selected" {% endif %}>Ahwia Nkwanta</option>
+  <option value="Akoko Spears" {% if src=="Akoko Spears" %} selected="selected" {% endif %}>Akoko Spears</option>
+  <option value="Akomadam" {% if src=="Akomadam" %} selected="selected" {% endif %}>Akomadam</option>
+  <option value="Akyekyekrom" {% if src=="Akyekyekrom" %} selected="selected" {% endif %}>Akyekyekrom</option>
+  <option value="Amakom" {% if src=="Amakom" %} selected="selected" {% endif %}>Amakom</option>
+  <option value="Amanfrom" {% if src=="Amanfrom" %} selected="selected" {% endif %}>Amanfrom</option>
+  <option value="Amoakokrom" {% if src=="Amoakokrom" %} selected="selected" {% endif %}>Amoakokrom</option>
+  <option value="Amoaya" {% if src=="Amoaya" %} selected="selected" {% endif %}>Amoaya</option>
+  <option value="Ampabame(Sokoban)" {% if src=="Ampabame(Sokoban)" %} selected="selected" {% endif %}>Ampabame(Sokoban)</option>
+  <option value="Ampayoo" {% if src=="Ampayoo" %} selected="selected" {% endif %}>Ampayoo</option>
+  <option value="Ankaasie" {% if src=="Ankaasie" %} selected="selected" {% endif %}>Ankaasie</option>
+  <option value="Anloga Junction" {% if src=="Anloga Junction" %} selected="selected" {% endif %}>Anloga Junction</option>
+  <option value="Antoa" {% if src=="Antoa" %} selected="selected" {% endif %}>Antoa</option>
+  <option value="Anwia Nkwanta" {% if src=="Anwia Nkwanta" %} selected="selected" {% endif %}>Anwia Nkwanta</option>
+  <option value="Anwomaso" {% if src=="Anwomaso" %} selected="selected" {% endif %}>Anwomaso</option>
+  <option value="Anyanfore" {% if src=="Anyanfore" %} selected="selected" {% endif %}>Anyanfore</option>
+  <option value="Anyinam Kotwi" {% if src=="Anyinam Kotwi" %} selected="selected" {% endif %}>Anyinam Kotwi</option>
+  <option value="Anyinasuso" {% if src=="Anyinasuso" %} selected="selected" {% endif %}>Anyinasuso</option>
+  <option value="Aponaponso" {% if src=="Aponaponso" %} selected="selected" {% endif %}>Aponaponso</option>
+  <option value="Appiadu" {% if src=="Appiadu" %} selected="selected" {% endif %}>Appiadu</option>
+  <option value="Appiadu Kokoben" {% if src=="Appiadu Kokoben" %} selected="selected" {% endif %}>Appiadu Kokoben</option>
+  <option value="Aprabo" {% if src=="Aprabo" %} selected="selected" {% endif %}>Aprabo</option>
+  <option value="Aprade" {% if src=="Aprade" %} selected="selected" {% endif %}>Aprade</option>
+  <option value="Apromase" {% if src=="Apromase" %} selected="selected" {% endif %}>Apromase</option>
+  <option value="Aputuogya" {% if src=="Aputuogya" %} selected="selected" {% endif %}>Aputuogya</option>
+  <option value="Asafo" {% if src=="Asafo" %} selected="selected" {% endif %}>Asafo</option>
+  <option value="Asafo Labour" {% if src=="Asafo Labour" %} selected="selected" {% endif %}>Asafo Labour</option>
+  <option value="Asafo Market" {% if src=="Asafo Market" %} selected="selected" {% endif %}>Asafo Market</option>
+  <option value="Asafo, Labour" {% if src=="Asafo, Labour" %} selected="selected" {% endif %}>Asafo, Labour</option>
+  <option value="Asamang" {% if src=="Asamang" %} selected="selected" {% endif %}>Asamang</option>
+  <option value="Asante Akyem, Agogo" {% if src=="Asante Akyem, Agogo" %} selected="selected" {% endif %}>Asante Akyem, Agogo</option>
+  <option value="Asante Bekwai" {% if src=="Asante Bekwai" %} selected="selected" {% endif %}>Asante Bekwai</option>
+  <option value="Asawase" {% if src=="Asawase" %} selected="selected" {% endif %}>Asawase</option>
+  <option value="Asawinso" {% if src=="Asawinso" %} selected="selected" {% endif %}>Asawinso</option>
+  <option value="Asenua" {% if src=="Asenua" %} selected="selected" {% endif %}>Asenua</option>
+  <option value="Asiyon" {% if src=="Asiyon" %} selected="selected" {% endif %}>Asiyon</option>
+  <option value="Asokwa" {% if src=="Asokwa" %} selected="selected" {% endif %}>Asokwa</option>
+  <option value="Asuofia" {% if src=="Asuofia" %} selected="selected" {% endif %}>Asuofia</option>
+  <option value="Asuofua" {% if src=="Asuofua" %} selected="selected" {% endif %}>Asuofua</option>
+  <option value="Asuoyeboa" {% if src=="Asuoyeboa" %} selected="selected" {% endif %}>Asuoyeboa</option>
+  <option value="Asuoyeboah" {% if src=="Asuoyeboah" %} selected="selected" {% endif %}>Asuoyeboah</option>
+  <option value="Atafoa" {% if src=="Atafoa" %} selected="selected" {% endif %}>Atafoa</option>
+  <option value="Atasomanso" {% if src=="Atasomanso" %} selected="selected" {% endif %}>Atasomanso</option>
+  <option value="Atinga Junction" {% if src=="Atinga Junction" %} selected="selected" {% endif %}>Atinga Junction</option>
+  <option value="Atonsu" {% if src=="Atonsu" %} selected="selected" {% endif %}>Atonsu</option>
+  <option value="Atonsu Agogo" {% if src=="Atonsu Agogo" %} selected="selected" {% endif %}>Atonsu Agogo</option>
+  <option value="Atonsu, Agogo" {% if src=="Atonsu, Agogo" %} selected="selected" {% endif %}>Atonsu, Agogo</option>
+  <option value="Atonsu, Ako Junction" {% if src=="Atonsu, Ako Junction" %} selected="selected" {% endif %}>Atonsu, Ako Junction</option>
+  <option value="Atonsu, Bokro Ako Junction" {% if src=="Atonsu, Bokro Ako Junction" %} selected="selected" {% endif %}>Atonsu, Bokro Ako Junction</option>
+  <option value="Atonsu, Bokro Last Stop" {% if src=="Atonsu, Bokro Last Stop" %} selected="selected" {% endif %}>Atonsu, Bokro Last Stop</option>
+  <option value="Atonsu, High School" {% if src=="Atonsu, High School" %} selected="selected" {% endif %}>Atonsu, High School</option>
+  <option value="Atonsu, High School Junction" {% if src=="Atonsu, High School Junction" %} selected="selected" {% endif %}>Atonsu, High School Junction</option>
+  <option value="Atonsu, High Scool" {% if src=="Atonsu, High Scool" %} selected="selected" {% endif %}>Atonsu, High Scool</option>
+  <option value="Atonsu, Monanco" {% if src=="Atonsu, Monanco" %} selected="selected" {% endif %}>Atonsu, Monanco</option>
+  <option value="Atonsu,Agogo" {% if src=="Atonsu,Agogo" %} selected="selected" {% endif %}>Atonsu,Agogo</option>
+  <option value="Atonsu,Monanco" {% if src=="Atonsu,Monanco" %} selected="selected" {% endif %}>Atonsu,Monanco</option>
+  <option value="Awidiem" {% if src=="Awidiem" %} selected="selected" {% endif %}>Awidiem</option>
+  <option value="Ayebikrom" {% if src=="Ayebikrom" %} selected="selected" {% endif %}>Ayebikrom</option>
+  <option value="Ayeduase" {% if src=="Ayeduase" %} selected="selected" {% endif %}>Ayeduase</option>
+  <option value="Ayimi" {% if src=="Ayimi" %} selected="selected" {% endif %}>Ayimi</option>
+  <option value="Baba Yara Sports Stadium" {% if src=="Baba Yara Sports Stadium" %} selected="selected" {% endif %}>Baba Yara Sports Stadium</option>
+  <option value="Bamfo Juntion" {% if src=="Bamfo Juntion" %} selected="selected" {% endif %}>Bamfo Juntion</option>
+  <option value="Bantama" {% if src=="Bantama" %} selected="selected" {% endif %}>Bantama</option>
+  <option value="BarNas" {% if src=="BarNas" %} selected="selected" {% endif %}>BarNas</option>
+  <option value="Bekwai" {% if src=="Bekwai" %} selected="selected" {% endif %}>Bekwai</option>
+  <option value="Bekwai Roundabout" {% if src=="Bekwai Roundabout" %} selected="selected" {% endif %}>Bekwai Roundabout</option>
+  <option value="Besease" {% if src=="Besease" %} selected="selected" {% endif %}>Besease</option>
+  <option value="Boadi" {% if src=="Boadi" %} selected="selected" {% endif %}>Boadi</option>
+  <option value="Boahenekwaa" {% if src=="Boahenekwaa" %} selected="selected" {% endif %}>Boahenekwaa</option>
+  <option value="Bodie" {% if src=="Bodie" %} selected="selected" {% endif %}>Bodie</option>
+  <option value="Bofoyedur" {% if src=="Bofoyedur" %} selected="selected" {% endif %}>Bofoyedur</option>
+  <option value="Bogoso" {% if src=="Bogoso" %} selected="selected" {% endif %}>Bogoso</option>
+  <option value="Bohyen" {% if src=="Bohyen" %} selected="selected" {% endif %}>Bohyen</option>
+  <option value="Bohyen Ampame" {% if src=="Bohyen Ampame" %} selected="selected" {% endif %}>Bohyen Ampame</option>
+  <option value="Bokabo" {% if src=="Bokabo" %} selected="selected" {% endif %}>Bokabo</option>
+  <option value="Bokro" {% if src=="Bokro" %} selected="selected" {% endif %}>Bokro</option>
+  <option value="Bokuruwa" {% if src=="Bokuruwa" %} selected="selected" {% endif %}>Bokuruwa</option>
+  <option value="Bomso" {% if src=="Bomso" %} selected="selected" {% endif %}>Bomso</option>
+  <option value="Bonsu Nkwanta" {% if src=="Bonsu Nkwanta" %} selected="selected" {% endif %}>Bonsu Nkwanta</option>
+  <option value="Bonsukrom" {% if src=="Bonsukrom" %} selected="selected" {% endif %}>Bonsukrom</option>
+  <option value="Bontomoroso" {% if src=="Bontomoroso" %} selected="selected" {% endif %}>Bontomoroso</option>
+  <option value="Bonwire" {% if src=="Bonwire" %} selected="selected" {% endif %}>Bonwire</option>
+  <option value="Boodie" {% if src=="Boodie" %} selected="selected" {% endif %}>Boodie</option>
+  <option value="Brepro" {% if src=="Brepro" %} selected="selected" {% endif %}>Brepro</option>
+  <option value="Brewery" {% if src=="Brewery" %} selected="selected" {% endif %}>Brewery</option>
+  <option value="Brofoyedu" {% if src=="Brofoyedu" %} selected="selected" {% endif %}>Brofoyedu</option>
+  <option value="Brofoyedur" {% if src=="Brofoyedur" %} selected="selected" {% endif %}>Brofoyedur</option>
+  <option value="Buokrom" {% if src=="Buokrom" %} selected="selected" {% endif %}>Buokrom</option>
+  <option value="Buokrom South" {% if src=="Buokrom South" %} selected="selected" {% endif %}>Buokrom South</option>
+  <option value="County Hospital" {% if src=="County Hospital" %} selected="selected" {% endif %}>County Hospital</option>
+  <option value="County Hospital (Abrepo)" {% if src=="County Hospital (Abrepo)" %} selected="selected" {% endif %}>County Hospital (Abrepo)</option>
+  <option value="Daban" {% if src=="Daban" %} selected="selected" {% endif %}>Daban</option>
+  <option value="Dakwadwom" {% if src=="Dakwadwom" %} selected="selected" {% endif %}>Dakwadwom</option>
+  <option value="Datano" {% if src=="Datano" %} selected="selected" {% endif %}>Datano</option>
+  <option value="Dedieso" {% if src=="Dedieso" %} selected="selected" {% endif %}>Dedieso</option>
+  <option value="Deduako" {% if src=="Deduako" %} selected="selected" {% endif %}>Deduako</option>
+  <option value="Dichems" {% if src=="Dichems" %} selected="selected" {% endif %}>Dichems</option>
+  <option value="Dichemso" {% if src=="Dichemso" %} selected="selected" {% endif %}>Dichemso</option>
+  <option value="Domeabra" {% if src=="Domeabra" %} selected="selected" {% endif %}>Domeabra</option>
+  <option value="Domenase" {% if src=="Domenase" %} selected="selected" {% endif %}>Domenase</option>
+  <option value="Dominase" {% if src=="Dominase" %} selected="selected" {% endif %}>Dominase</option>
+  <option value="Dominase Nkwanta" {% if src=="Dominase Nkwanta" %} selected="selected" {% endif %}>Dominase Nkwanta</option>
+  <option value="Dompoase Aprabo" {% if src=="Dompoase Aprabo" %} selected="selected" {% endif %}>Dompoase Aprabo</option>
+  <option value="Donyinah" {% if src=="Donyinah" %} selected="selected" {% endif %}>Donyinah</option>
+  <option value="Duase" {% if src=="Duase" %} selected="selected" {% endif %}>Duase</option>
+  <option value="Edwanase" {% if src=="Edwanase" %} selected="selected" {% endif %}>Edwanase</option>
+  <option value="Edwenase" {% if src=="Edwenase" %} selected="selected" {% endif %}>Edwenase</option>
+  <option value="Effiduase" {% if src=="Effiduase" %} selected="selected" {% endif %}>Effiduase</option>
+  <option value="Ejisu" {% if src=="Ejisu" %} selected="selected" {% endif %}>Ejisu</option>
+  <option value="Emina" {% if src=="Emina" %} selected="selected" {% endif %}>Emina</option>
+  <option value="Esieinkyem" {% if src=="Esieinkyem" %} selected="selected" {% endif %}>Esieinkyem</option>
+  <option value="Esreso" {% if src=="Esreso" %} selected="selected" {% endif %}>Esreso</option>
+  <option value="Estate Junction" {% if src=="Estate Junction" %} selected="selected" {% endif %}>Estate Junction</option>
+  <option value="F Line" {% if src=="F Line" %} selected="selected" {% endif %}>F Line</option>
+  <option value="F line" {% if src=="F line" %} selected="selected" {% endif %}>F line</option>
+  <option value="F-Line" {% if src=="F-Line" %} selected="selected" {% endif %}>F-Line</option>
+  <option value="Fawoade" {% if src=="Fawoade" %} selected="selected" {% endif %}>Fawoade</option>
+  <option value="Fawode" {% if src=="Fawode" %} selected="selected" {% endif %}>Fawode</option>
+  <option value="Feyiase Kokoben" {% if src=="Feyiase Kokoben" %} selected="selected" {% endif %}>Feyiase Kokoben</option>
+  <option value="Foese Kokoben" {% if src=="Foese Kokoben" %} selected="selected" {% endif %}>Foese Kokoben</option>
+  <option value="Fomena" {% if src=="Fomena" %} selected="selected" {% endif %}>Fomena</option>
+  <option value="Fumesua" {% if src=="Fumesua" %} selected="selected" {% endif %}>Fumesua</option>
+  <option value="Fumesua Kyirekrom" {% if src=="Fumesua Kyirekrom" %} selected="selected" {% endif %}>Fumesua Kyirekrom</option>
+  <option value="Gawo Junction" {% if src=="Gawo Junction" %} selected="selected" {% endif %}>Gawo Junction</option>
+  <option value="Goaso" {% if src=="Goaso" %} selected="selected" {% endif %}>Goaso</option>
+  <option value="Guinness Brewery" {% if src=="Guinness Brewery" %} selected="selected" {% endif %}>Guinness Brewery</option>
+  <option value="Gyapa" {% if src=="Gyapa" %} selected="selected" {% endif %}>Gyapa</option>
+  <option value="Gyinase" {% if src=="Gyinase" %} selected="selected" {% endif %}>Gyinase</option>
+  <option value="IPT" {% if src=="IPT" %} selected="selected" {% endif %}>IPT</option>
+  <option value="Islamic SHS" {% if src=="Islamic SHS" %} selected="selected" {% endif %}>Islamic SHS</option>
+  <option value="Jachie" {% if src=="Jachie" %} selected="selected" {% endif %}>Jachie</option>
+  <option value="Jachie Pramso" {% if src=="Jachie Pramso" %} selected="selected" {% endif %}>Jachie Pramso</option>
+  <option value="Jadua Kese" {% if src=="Jadua Kese" %} selected="selected" {% endif %}>Jadua Kese</option>
+  <option value="Juaso" {% if src=="Juaso" %} selected="selected" {% endif %}>Juaso</option>
+  <option value="Kaase" {% if src=="Kaase" %} selected="selected" {% endif %}>Kaase</option>
+  <option value="Kahuro" {% if src=="Kahuro" %} selected="selected" {% endif %}>Kahuro</option>
+  <option value="Kamiaago" {% if src=="Kamiaago" %} selected="selected" {% endif %}>Kamiaago</option>
+  <option value="Kejetia" {% if src=="Kejetia" %} selected="selected" {% endif %}>Kejetia</option>
+  <option value="Kejetia Roman Hill" {% if src=="Kejetia Roman Hill" %} selected="selected" {% endif %}>Kejetia Roman Hill</option>
+  <option value="Kejetia, Dr Mensah" {% if src=="Kejetia, Dr Mensah" %} selected="selected" {% endif %}>Kejetia, Dr Mensah</option>
+  <option value="Kejetia, Roman Hill" {% if src=="Kejetia, Roman Hill" %} selected="selected" {% endif %}>Kejetia, Roman Hill</option>
+  <option value="Kentinkrono" {% if src=="Kentinkrono" %} selected="selected" {% endif %}>Kentinkrono</option>
+  <option value="Kenyase" {% if src=="Kenyase" %} selected="selected" {% endif %}>Kenyase</option>
+  <option value="Kintampo" {% if src=="Kintampo" %} selected="selected" {% endif %}>Kintampo</option>
+  <option value="Koforidua" {% if src=="Koforidua" %} selected="selected" {% endif %}>Koforidua</option>
+  <option value="Kokofu" {% if src=="Kokofu" %} selected="selected" {% endif %}>Kokofu</option>
+  <option value="Kole" {% if src=="Kole" %} selected="selected" {% endif %}>Kole</option>
+  <option value="Komfo Anokye Hospital" {% if src=="Komfo Anokye Hospital" %} selected="selected" {% endif %}>Komfo Anokye Hospital</option>
+  <option value="Konogo" {% if src=="Konogo" %} selected="selected" {% endif %}>Konogo</option>
+  <option value="Konongo" {% if src=="Konongo" %} selected="selected" {% endif %}>Konongo</option>
+  <option value="Kotei" {% if src=="Kotei" %} selected="selected" {% endif %}>Kotei</option>
+  <option value="Kotwi" {% if src=="Kotwi" %} selected="selected" {% endif %}>Kotwi</option>
+  <option value="Kroform" {% if src=="Kroform" %} selected="selected" {% endif %}>Kroform</option>
+  <option value="Krofrom" {% if src=="Krofrom" %} selected="selected" {% endif %}>Krofrom</option>
+  <option value="Krofrom (New Tafo)" {% if src=="Krofrom (New Tafo)" %} selected="selected" {% endif %}>Krofrom (New Tafo)</option>
+  <option value="Krofrom Sokoban Road" {% if src=="Krofrom Sokoban Road" %} selected="selected" {% endif %}>Krofrom Sokoban Road</option>
+  <option value="Krofrom(New Tafo)" {% if src=="Krofrom(New Tafo)" %} selected="selected" {% endif %}>Krofrom(New Tafo)</option>
+  <option value="Kronom" {% if src=="Kronom" %} selected="selected" {% endif %}>Kronom</option>
+  <option value="Kumasi Aiport Roundabout" {% if src=="Kumasi Aiport Roundabout" %} selected="selected" {% endif %}>Kumasi Aiport Roundabout</option>
+  <option value="Kumasi Airport" {% if src=="Kumasi Airport" %} selected="selected" {% endif %}>Kumasi Airport</option>
+  <option value="Kumasi Airport Rounabout" {% if src=="Kumasi Airport Rounabout" %} selected="selected" {% endif %}>Kumasi Airport Rounabout</option>
+  <option value="Kumasi Airport Roundabout" {% if src=="Kumasi Airport Roundabout" %} selected="selected" {% endif %}>Kumasi Airport Roundabout</option>
+  <option value="Kumasi City Mall" {% if src=="Kumasi City Mall" %} selected="selected" {% endif %}>Kumasi City Mall</option>
+  <option value="Kumasi Girls School" {% if src=="Kumasi Girls School" %} selected="selected" {% endif %}>Kumasi Girls School</option>
+  <option value="Kumasi UEW" {% if src=="Kumasi UEW" %} selected="selected" {% endif %}>Kumasi UEW</option>
+  <option value="Kumawu" {% if src=="Kumawu" %} selected="selected" {% endif %}>Kumawu</option>
+  <option value="Kutenase" {% if src=="Kutenase" %} selected="selected" {% endif %}>Kutenase</option>
+  <option value="Kuwait" {% if src=="Kuwait" %} selected="selected" {% endif %}>Kuwait</option>
+  <option value="Kwadaso" {% if src=="Kwadaso" %} selected="selected" {% endif %}>Kwadaso</option>
+  <option value="Kwadaso IPT" {% if src=="Kwadaso IPT" %} selected="selected" {% endif %}>Kwadaso IPT</option>
+  <option value="Kwadwo" {% if src=="Kwadwo" %} selected="selected" {% endif %}>Kwadwo</option>
+  <option value="Kwamo" {% if src=="Kwamo" %} selected="selected" {% endif %}>Kwamo</option>
+  <option value="Kwatereso" {% if src=="Kwatereso" %} selected="selected" {% endif %}>Kwatereso</option>
+  <option value="Maakro" {% if src=="Maakro" %} selected="selected" {% endif %}>Maakro</option>
+  <option value="Mampenase" {% if src=="Mampenase" %} selected="selected" {% endif %}>Mampenase</option>
+  <option value="Mampongteng" {% if src=="Mampongteng" %} selected="selected" {% endif %}>Mampongteng</option>
+  <option value="Mamponteng" {% if src=="Mamponteng" %} selected="selected" {% endif %}>Mamponteng</option>
+  <option value="Manso Abure" {% if src=="Manso Abure" %} selected="selected" {% endif %}>Manso Abure</option>
+  <option value="Manso Atwere" {% if src=="Manso Atwere" %} selected="selected" {% endif %}>Manso Atwere</option>
+  <option value="Manso Nkwanta" {% if src=="Manso Nkwanta" %} selected="selected" {% endif %}>Manso Nkwanta</option>
+  <option value="Mayanka" {% if src=="Mayanka" %} selected="selected" {% endif %}>Mayanka</option>
+  <option value="Medoma" {% if src=="Medoma" %} selected="selected" {% endif %}>Medoma</option>
+  <option value="Moshie Zongo" {% if src=="Moshie Zongo" %} selected="selected" {% endif %}>Moshie Zongo</option>
+  <option value="Mr Mote" {% if src=="Mr Mote" %} selected="selected" {% endif %}>Mr Mote</option>
+  <option value="Nahinso" {% if src=="Nahinso" %} selected="selected" {% endif %}>Nahinso</option>
+  <option value="Nana Appiah" {% if src=="Nana Appiah" %} selected="selected" {% endif %}>Nana Appiah</option>
+  <option value="Nana Ho" {% if src=="Nana Ho" %} selected="selected" {% endif %}>Nana Ho</option>
+  <option value="New Edubiase" {% if src=="New Edubiase" %} selected="selected" {% endif %}>New Edubiase</option>
+  <option value="Nkawkaw" {% if src=="Nkawkaw" %} selected="selected" {% endif %}>Nkawkaw</option>
+  <option value="Nkonya" {% if src=="Nkonya" %} selected="selected" {% endif %}>Nkonya</option>
+  <option value="Nkoransah" {% if src=="Nkoransah" %} selected="selected" {% endif %}>Nkoransah</option>
+  <option value="Nkronsa" {% if src=="Nkronsa" %} selected="selected" {% endif %}>Nkronsa</option>
+  <option value="Nkronsah" {% if src=="Nkronsah" %} selected="selected" {% endif %}>Nkronsah</option>
+  <option value="Nkwakwa" {% if src=="Nkwakwa" %} selected="selected" {% endif %}>Nkwakwa</option>
+  <option value="Nsuterm" {% if src=="Nsuterm" %} selected="selected" {% endif %}>Nsuterm</option>
+  <option value="Ntonsu" {% if src=="Ntonsu" %} selected="selected" {% endif %}>Ntonsu</option>
+  <option value="Nyamebekyere" {% if src=="Nyamebekyere" %} selected="selected" {% endif %}>Nyamebekyere</option>
+  <option value="Nyamebekyere Camp" {% if src=="Nyamebekyere Camp" %} selected="selected" {% endif %}>Nyamebekyere Camp</option>
+  <option value="Obofour" {% if src=="Obofour" %} selected="selected" {% endif %}>Obofour</option>
+  <option value="Odum" {% if src=="Odum" %} selected="selected" {% endif %}>Odum</option>
+  <option value="Offinso" {% if src=="Offinso" %} selected="selected" {% endif %}>Offinso</option>
+  <option value="Oforikrom" {% if src=="Oforikrom" %} selected="selected" {% endif %}>Oforikrom</option>
+  <option value="Ohwim" {% if src=="Ohwim" %} selected="selected" {% endif %}>Ohwim</option>
+  <option value="Old Ash FM" {% if src=="Old Ash FM" %} selected="selected" {% endif %}>Old Ash FM</option>
+  <option value="Opoku Ware School" {% if src=="Opoku Ware School" %} selected="selected" {% endif %}>Opoku Ware School</option>
+  <option value="Ownien" {% if src=="Ownien" %} selected="selected" {% endif %}>Ownien</option>
+  <option value="Pankrono" {% if src=="Pankrono" %} selected="selected" {% endif %}>Pankrono</option>
+  <option value="Parkoso" {% if src=="Parkoso" %} selected="selected" {% endif %}>Parkoso</option>
+  <option value="Patasi" {% if src=="Patasi" %} selected="selected" {% endif %}>Patasi</option>
+  <option value="Pataukro" {% if src=="Pataukro" %} selected="selected" {% endif %}>Pataukro</option>
+  <option value="Pekyi 1" {% if src=="Pekyi 1" %} selected="selected" {% endif %}>Pekyi 1</option>
+  <option value="Pekyi 2" {% if src=="Pekyi 2" %} selected="selected" {% endif %}>Pekyi 2</option>
+  <option value="Pekyi N01" {% if src=="Pekyi N01" %} selected="selected" {% endif %}>Pekyi N01</option>
+  <option value="Pekyi N02" {% if src=="Pekyi N02" %} selected="selected" {% endif %}>Pekyi N02</option>
+  <option value="Pekyi No1" {% if src=="Pekyi No1" %} selected="selected" {% endif %}>Pekyi No1</option>
+  <option value="Pokuase" {% if src=="Pokuase" %} selected="selected" {% endif %}>Pokuase</option>
+  <option value="Prestia" {% if src=="Prestia" %} selected="selected" {% endif %}>Prestia</option>
+  <option value="Ramseyer" {% if src=="Ramseyer" %} selected="selected" {% endif %}>Ramseyer</option>
+  <option value="Sabronum" {% if src=="Sabronum" %} selected="selected" {% endif %}>Sabronum</option>
+  <option value="Sankore" {% if src=="Sankore" %} selected="selected" {% endif %}>Sankore</option>
+  <option value="Santasi" {% if src=="Santasi" %} selected="selected" {% endif %}>Santasi</option>
+  <option value="Santasi Roundabout" {% if src=="Santasi Roundabout" %} selected="selected" {% endif %}>Santasi Roundabout</option>
+  <option value="Santasi, Anyinam" {% if src=="Santasi, Anyinam" %} selected="selected" {% endif %}>Santasi, Anyinam</option>
+  <option value="Sepe" {% if src=="Sepe" %} selected="selected" {% endif %}>Sepe</option>
+  <option value="Sofoline" {% if src=="Sofoline" %} selected="selected" {% endif %}>Sofoline</option>
+  <option value="Sokoban" {% if src=="Sokoban" %} selected="selected" {% endif %}>Sokoban</option>
+  <option value="St Abed" {% if src=="St Abed" %} selected="selected" {% endif %}>St Abed</option>
+  <option value="Stadium" {% if src=="Stadium" %} selected="selected" {% endif %}>Stadium</option>
+  <option value="Star Junction" {% if src=="Star Junction" %} selected="selected" {% endif %}>Star Junction</option>
+  <option value="Suame Rounabout" {% if src=="Suame Rounabout" %} selected="selected" {% endif %}>Suame Rounabout</option>
+  <option value="Suame Roundabout" {% if src=="Suame Roundabout" %} selected="selected" {% endif %}>Suame Roundabout</option>
+  <option value="Suame, Magazine" {% if src=="Suame, Magazine" %} selected="selected" {% endif %}>Suame, Magazine</option>
+  <option value="Susuanso" {% if src=="Susuanso" %} selected="selected" {% endif %}>Susuanso</option>
+  <option value="Susuaso" {% if src=="Susuaso" %} selected="selected" {% endif %}>Susuaso</option>
+  <option value="Tafo" {% if src=="Tafo" %} selected="selected" {% endif %}>Tafo</option>
+  <option value="Takoradi" {% if src=="Takoradi" %} selected="selected" {% endif %}>Takoradi</option>
+  <option value="Tanoso" {% if src=="Tanoso" %} selected="selected" {% endif %}>Tanoso</option>
+  <option value="Tech" {% if src=="Tech" %} selected="selected" {% endif %}>Tech</option>
+  <option value="Tech Junction" {% if src=="Tech Junction" %} selected="selected" {% endif %}>Tech Junction</option>
+  <option value="Techiman" {% if src=="Techiman" %} selected="selected" {% endif %}>Techiman</option>
+  <option value="Tepa" {% if src=="Tepa" %} selected="selected" {% endif %}>Tepa</option>
+  <option value="Totokrom" {% if src=="Totokrom" %} selected="selected" {% endif %}>Totokrom</option>
+  <option value="Trede" {% if src=="Trede" %} selected="selected" {% endif %}>Trede</option>
+  <option value="TUC" {% if src=="TUC" %} selected="selected" {% endif %}>TUC</option>
+  <option value="Wasa Akropong" {% if src=="Wasa Akropong" %} selected="selected" {% endif %}>Wasa Akropong</option>
+  <option value="Wenchi" {% if src=="Wenchi" %} selected="selected" {% endif %}>Wenchi</option>
+  <option value="Yard" {% if src=="Yard" %} selected="selected" {% endif %}>Yard</option>
+  <option value="Yawkese" {% if src=="Yawkese" %} selected="selected" {% endif %}>Yawkese</option>
+</select></div><br>
+
+    <input type="submit", value="Search">
+    <br>
+    </form>
+    <br>
+
+   <a href="/suggest">Fare not included? Suggest A fare now</a>
+   
+   <br>
+</div>
+<br><br><br>
+<footer> 
+<br>
+<p>Copyright &copy; 2020 Trotro Live Ltd . <a href="company.html">Company Information</a></p>
+<p2><a href="privacy.html">Privacy Terms</a></p2>
+<br>
+</footer>
+
+
+</body>
+</html>
